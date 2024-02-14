@@ -1,0 +1,18 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		int[] salaries = new int[3];
+		
+		System.out.println(salaries[0]);
+		System.out.println(salaries[1]);
+		System.out.println(salaries[2]);
+		
+		salaries[1] = 5000;
+		
+		System.out.println("after setting the array...");
+
+	}
+
+}
