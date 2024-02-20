@@ -1,24 +1,24 @@
 
-class A {
-	
-	static int i = 4;
-	
-	static void display() {
-		
-		System.out.println(A.i);
-	}		
-}
-
-public class ActualJava_14 {
-	
-	static int i = 6;
-
-	public static void main(String[] args) {
-		
-		A.display();
-
-	}	
-}
+//class A {
+//	
+//	static int i = 4;
+//	
+//	static void display() {
+//		
+//		System.out.println(B.i);
+//	}		
+//}
+//
+//public class ActualJava_14 {
+//	
+//	static int i = 6;
+//
+//	public static void main(String[] args) {
+//		
+//		B.display();
+//
+//	}	
+//}
 
 
 //class A {
