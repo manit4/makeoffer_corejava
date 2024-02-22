@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ExceptionHandling_20 {
 
-	public static void main(String[] args) throws Exception{
+	public static void main(String[] args) throws Exception {
 		
 		
 			askFileName();
