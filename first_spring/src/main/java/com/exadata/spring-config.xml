@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+<!-- bean definitions here -->
+
+<bean name="restaurantBean" class="com.exadata.Restaurant" scope="prototype">
+	<property name="name" value="AAA Chains...."></property>
+</bean>
+
+
+
+
+
+
+<!-- <bean name="restaurantBean" class="com.exadata.Restaurant">
+	<property name="tea" ref="teaBean"></property>
+</bean>
+<bean name="teaBean" class="com.exadata.Tea"></bean> -->
+
+
+
+
+<!-- <bean name="restaurantBean" class="com.exadata.Restaurant">
+	<constructor-arg value="Kiran Chains"></constructor-arg>
+</bean> -->
+
+<!-- <bean name="restaurantBean" class="com.exadata.Restaurant">
+	<constructor-arg value="Kiran Chains"></constructor-arg>
+	<constructor-arg value="10"></constructor-arg>
+</bean> -->
+
+
+
+<!-- <bean name="restaurantBean" class="com.exadata.Restaurant">
+	<property name="name" value="XYZ Chains"></property>
+</bean> -->
+
+
+<!-- <bean name="restaurantBean" class="com.exadata.Restaurant">
+	
+</bean> -->
+
+</beans>
