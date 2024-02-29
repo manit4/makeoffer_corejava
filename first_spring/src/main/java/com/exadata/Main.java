@@ -4,31 +4,19 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
-class Restaurant {
-	
-	String name;
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	public Restaurant() {
-		System.out.println("inside Rest constr...");
-	}
-}
-
 public class Main {
 	
 	public static void main(String[] args) {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/exadata/spring-config.xml");
 		
-		Restaurant restaurant = context.getBean("restaurantBean", Restaurant.class);
-		
-		System.out.println(restaurant.name);
-		restaurant.name = "BBB Chains";
-		
-		Restaurant restaurant2 = context.getBean("restaurantBean", Restaurant.class);
-		System.out.println(restaurant2.name);
+//		Restaurant restaurant = context.getBean("restaurantBean", Restaurant.class);
+//		
+//		System.out.println(restaurant.name);
+//		restaurant.name = "BBB Chains";
+//		
+//		Restaurant restaurant2 = context.getBean("restaurantBean", Restaurant.class);
+//		System.out.println(restaurant2.name);
 	}
 }
 
