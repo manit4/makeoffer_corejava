@@ -1983,3 +1983,4 @@ java.net.URISyntaxException: Illegal character in path at index 20: file:/C:/Use
 2024-03-05 23:59:21,764 [Worker-196: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Manit Hira\Downloads\ExaData_1\jpa_first\jpa_first\src\test\resources
 2024-03-05 23:59:42,031 [Worker-191: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-03-05 23:59:42,035 [Worker-191: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-05 23:59:42,036 [Worker-191: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Manit Hira\Downloads\ExaData_1\jpa_first\jpa_first\src\test\resources
