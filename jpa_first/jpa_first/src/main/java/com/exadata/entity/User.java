@@ -24,9 +24,10 @@ public class User {
 	@Id
 	@Column(name = "uname")
 	private String username;
+	private String password;
 	@Column(name = "complete_name")
 	private String name;
-	private String password;
+	private String email;
 	
 
 }

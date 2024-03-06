@@ -186,21 +186,34 @@ public class JpaFirstApplication implements CommandLineRunner {
 //		
 //		studentRepository.save(student);
 
-		System.out.println("--------------");
-
-		Optional<Student> optional = studentRepository.findById(100);
-
-		if (optional.isPresent()) {
-
-			Student student = optional.get();
-
-			System.out.println(student.getId() + ", " + student.getName() + ", " + student.getPassword());
-
-			List<Address> addresses = student.getAddress();
-
-			addresses.forEach(studentt -> System.out.println(studentt.getAddress_id() + ", " + studentt.getCity()));
-		}
-
+//		System.out.println("--------------");
+//
+//		Optional<Student> optional = studentRepository.findById(100);
+//
+//		if (optional.isPresent()) {
+//
+//			Student student = optional.get();
+//
+//			System.out.println(student.getId() + ", " + student.getName() + ", " + student.getPassword());
+//
+//			List<Address> addresses = student.getAddress();
+//
+//			addresses.forEach(studentt -> System.out.println(studentt.getAddress_id() + ", " + studentt.getCity()));
+//		}
+		
+//		System.out.println("----------------");
+//		
+//		List<Student> students = studentRepository.getStudent();
+//		
+//		for(Student student : students) {
+//			
+//			System.out.println(student.getId()+", "+student.getName()+", "+student.getPassword());
+//			
+//			List<Address> addresses = student.getAddress();
+//			
+//			addresses.forEach(address -> System.out.println(address.getCity()));
+//			
+//		}
 	}
 
 }
