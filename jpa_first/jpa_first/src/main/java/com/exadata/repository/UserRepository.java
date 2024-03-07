@@ -32,4 +32,6 @@ public interface UserRepository extends JpaRepository<User, String>{
 	@Query(value = "select * from user_detail where password <:val1", nativeQuery = true)
 	public List<User> getUserByPasswordLessThan(@Param("val1") String val1);
 	
+	public User findByUsernameAndPassword(String username, String password);
+	
 }

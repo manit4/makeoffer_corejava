@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.exadata.entity.User;
 import com.exadata.service.UserService;
@@ -27,13 +28,32 @@ public class HomeController {
 		return "registration_page";
 	}
 	
-	@PostMapping("/register")
-	public String register(User user) {
-		System.out.println("inside register()...."+user);
-		
-		userService.addUser(user);
-		
-		return "index";
-	}
+//	@PostMapping("/register")
+//	public String register(User user) {
+//		System.out.println("inside register()...."+user);
+//		
+//		userService.addUser(user);
+//		
+//		return "index";
+//	}
+	
+	
+//	@PostMapping("/register")
+//	public ModelAndView register(User user) {
+//		System.out.println("inside register()...."+user);
+//		
+//		ModelAndView modelAndView = new ModelAndView("index");
+//		modelAndView.addObject("registerSuccessMsg", "Registration Successful, please login now!!");
+//		
+//		
+//		return modelAndView;
+//	}
+	
+	
+	
+	
+	
+	
+	
 
 }

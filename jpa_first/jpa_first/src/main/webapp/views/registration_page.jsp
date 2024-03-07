@@ -12,7 +12,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
-<form action="register" method="post">
+<form action="/register" method="post">
 <div style="margin-left: 500px; margin-right: 500px; margin-top: 20px;">
 	<label style="margin-bottom: 20px;  font-size: 20px; color: red">Provide your Details</label>
 		<div class="mb-3">
