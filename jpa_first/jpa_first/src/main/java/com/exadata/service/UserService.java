@@ -1,6 +1,7 @@
 package com.exadata.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,18 +61,27 @@ public class UserService {
 //		
 //	}
 
-	public boolean login(String username, String password) {
-
-		boolean status = false;
+//	public boolean login(String username, String password) {
+//
+//		boolean status = false;
+//
+//		User user = userRepository.findByUsernameAndPassword(username, password);
+//		
+//		if(user != null) {
+//			
+//			status = true;
+//		}	
+//		return status;
+//	}
+	
+	public User login(String username, String password) {
 
 		User user = userRepository.findByUsernameAndPassword(username, password);
 		
-		if(user != null) {
-			
-			status = true;
-		}	
-		return status;
+		
+		return user;
 	}
+	
 	
 	public List<User> findAllUsers() {
 		
@@ -82,5 +92,23 @@ public class UserService {
 		
 		userRepository.deleteById(username);
 	}	
+	
+	public User findById(String username) {
+		
+		Optional<User> optional = userRepository.findById(username);
+		
+		User user = null;
+		
+		if(optional.isPresent()) {
+			
+			user = optional.get();
+		}
+		return user;
+	}
+	
+	public User updateUser(User user) {
+		
+		return userRepository.save(user);
+	}
 }
 

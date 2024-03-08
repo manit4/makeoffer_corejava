@@ -31,6 +31,18 @@
 		<label for="exampleFormControlInput1" class="form-label">Email Address</label> <input type="text" class="form-control"
 			id="exampleFormControlInput1" placeholder="Enter Email Address" name="email">
 	</div>
+	<div class="form-check">
+  <input class="form-check-input" type="radio" name="role" id="flexRadioDefault1" value="Employee"> 
+  <label class="form-check-label" for="flexRadioDefault1">
+    Employee
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="role" id="flexRadioDefault2" checked value="Admin">
+  <label class="form-check-label" for="flexRadioDefault2">
+    Admin
+  </label>
+</div>
 	<button type="submit" class="btn btn-primary" style="margin-left: 80px">Register</button><br><br>
 	<a href="/">Back to Home Page <<</a>
 	</div>

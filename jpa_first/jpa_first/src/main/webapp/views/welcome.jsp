@@ -17,12 +17,15 @@
 
 	<%
 	List<User> users = (List<User>) request.getAttribute("users");
+	//String sessionMsg = (String)session.getAttribute("sessionData");
+	User user = (User) session.getAttribute("user");
 	%>
 
 	<%
 	if (users.size() > 0) {
 	%>
 
+	<%-- The session data is <%=sessionMsg %> --%>
 	<table class="table">
 		<thead>
 			<tr>
@@ -35,19 +38,29 @@
 		</thead>
 		<tbody>
 			<%
-			for (int i = 0; i < users.size(); i++) {
+			if(user.getRole().equals("Admin")) {
+				for (int i = 0; i < users.size(); i++) {
 			%>
 			<tr>
 				<th scope="row"><%=i + 1%></th>
 				<td><%=users.get(i).getUsername()%></td>
 				<td><%=users.get(i).getName()%></td>
 				<td><%=users.get(i).getEmail()%></td>
-				<td><a href="">Update</a>&nbsp&nbsp<a
+				<td><a href="/updatePage/<%=users.get(i).getUsername()%>">Update</a>&nbsp&nbsp<a
 					href="/delete/<%=users.get(i).getUsername()%>">Delete</a></td>
 			</tr>
 			<%
-			}
+			}}
+			else {
 			%>
+			<tr>
+				<th scope="row"><%=1%></th>
+				<td><%=user.getUsername()%></td>
+				<td><%=user.getName()%></td>
+				<td><%=user.getEmail()%></td>
+				<td><a href="/updatePage/<%=user.getUsername()%>">Update</a>&nbsp&nbsp</td>
+			</tr>
+			<%} %>
 		</tbody>
 
 	</table>

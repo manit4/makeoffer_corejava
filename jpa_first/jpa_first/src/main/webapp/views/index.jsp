@@ -14,7 +14,7 @@
 <body>
 <form action="/login" method="post">
 <h2 style="color: green; margin-left: 200px">${registerSuccessMsg}</h2>
-<h2 style="color: red; margin-left: 200px">${registerErrorMsg}${loginErrorMsg}</h2>
+<h2 style="color: red; margin-left: 200px">${registerErrorMsg}${loginErrorMsg}${authorizedMsg}</h2>
 	<div style="margin-left: 500px; margin-right: 500px; margin-top: 20px;">
 	<label style="margin-bottom: 20px;  font-size: 20px; color: red">Provide your Credentials</label>
 		<div class="mb-3">
@@ -25,6 +25,7 @@
 		<label for="exampleFormControlInput1" class="form-label">Password</label> <input type="password" class="form-control"
 			id="exampleFormControlInput1" placeholder="Enter Password" name="password">
 	</div>
+	
 	<button type="submit" class="btn btn-primary" style="margin-left: 80px">Login</button><br><br>
 	<a href="registrationPage">New User? Register here!!</a>
 	</div>

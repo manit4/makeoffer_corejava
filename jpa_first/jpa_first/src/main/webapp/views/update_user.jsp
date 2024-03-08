@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="com.exadata.entity.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<%
+	//User user = (User) request.getAttribute("user");
+	//String sessionMsg = (String)session.getAttribute("sessionData");
+	User user = (User) session.getAttribute("user");
+	%>
+	<%-- The session data is <%=sessionMsg %> --%>
+	<form action="/update" method="post">
+		<div
+			style="margin-left: 500px; margin-right: 500px; margin-top: 20px;">
+			<label style="margin-bottom: 20px; font-size: 20px; color: red">Provide
+				your Details</label>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Username</label>
+				<input type="text" class="form-control" placeholder="Enter Username"
+					name="username" readonly value="<%=user.getUsername()%>">
+			</div>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Password</label>
+				<input type="password" class="form-control"
+					placeholder="Enter Password" name="password"
+					value="<%=user.getPassword()%>">
+			</div>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Complete
+					Name</label> <input type="text" class="form-control"
+					placeholder="Enter Complete Name" name="name"
+					value="<%=user.getName()%>">
+			</div>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Email
+					Address</label> <input type="text" class="form-control"
+					placeholder="Enter Email Address" name="email"
+					value="<%=user.getEmail()%>">
+			</div>
+			<button type="submit" class="btn btn-primary"
+				style="margin-left: 80px">Update</button>
+			<br>
+			<br> <a href="/">Back to Home Page <<</a>
+			<%
+			if (user.getRole().equals("Admin")) {
+			%>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="role"
+					id="flexRadioDefault1" value="Employee"> <label
+					class="form-check-label" for="flexRadioDefault1"> Employee
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="role"
+					id="flexRadioDefault2" checked value="Admin"> <label
+					class="form-check-label" for="flexRadioDefault2"> Admin </label>
+			</div>
+			<%
+			}
+			%>
+		</div>
+
+	</form>
+</body>
+</html>

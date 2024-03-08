@@ -28,6 +28,7 @@ public class User {
 	@Column(name = "complete_name")
 	private String name;
 	private String email;
+	private String role;
 	
 
 }
