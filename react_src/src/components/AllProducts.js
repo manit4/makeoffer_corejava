@@ -25,7 +25,7 @@ const AllProducts= ()=> {
 
             {/* <Product product={products[0]} />
             <Product product={products[1]} /> */}
-
+            
         </div>
     )
 }

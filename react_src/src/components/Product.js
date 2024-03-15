@@ -5,7 +5,7 @@ const Product = ({product}) => {
    
 
     return (
-        <div style={{marginLeft:400, marginRight:300, background: 'red'}}>
+        <div style={{background: 'red'}}>
             <h2>Product Id is {product.pid}</h2>
             <h2>Product Name is {product.name}</h2>
             <h2>Product Price is {product.price}</h2>
