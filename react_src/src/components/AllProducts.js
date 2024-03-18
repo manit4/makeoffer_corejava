@@ -1,46 +1,45 @@
 import React, { useEffect, useState } from 'react'
-import Product from './Product'
 import axios from 'axios'
 import { Button } from 'reactstrap'
+import { ToastContainer, toast } from 'react-toastify'
+import Product from './Product'
 
 const AllProducts= ()=> {
 
+    var nonStateData = 'Manit';
+    const [stateData, setStateData] = useState('Manit')
+
+   const [products, setProducts] = useState([]);
+
     useEffect(() => {
-       alert('testing...')
-       getAllProducts();
+        document.title = 'Home'
+        console.log('inside useEffect() hook....')
+        getAllLproducts();
     }, [])
 
-    // var products = [
-    //     {
-    //         pid:100,
-    //         name:'Sony Led',
-    //         price:400
-    //     },
-    //     {
-    //         pid:101,
-    //         name:'Samsung Led',
-    //         price:300
-    //     } 
-    // ]
+    function getAllLproducts() {
 
-
-    var [products, setProducts] = useState([])
-
-    function getAllProducts() {
-
-        axios.get('http://localhost:9898/allProducts').then((response) => {
-            console.log('resposne is ',response)
-            products = setProducts(response.data);
-        },
-        (error) => {
-            console.log('error is ',error);
-        })
+        axios.get('http://localhost:9898/allProducts').then(
+            (response) => {
+             setProducts(response.data);
+             toast.success('Produts loaded Successfully...', {
+                position:'bottom-center'
+             })
+            },
+            (error) => {
+                console.log('error is ', error)
+                toast.error('Some Error Occured...', {
+                    position:'bottom-center'
+                })
+            }
+        )
     }
 
     return (
         <div>
+            <ToastContainer />
             {
-                products.map((item) => <Product product = {item}/>)
+               products.length>0 ? (products.map((item) => <Product product = {item}/>)) : 'No Records Found'
             }
 
             {/* <Product product={products[0]} />

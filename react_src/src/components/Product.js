@@ -1,6 +1,6 @@
 import React from "react";
 
-const Product = ({product}) => {
+function Product({product}) {
 
    
 
@@ -12,78 +12,5 @@ const Product = ({product}) => {
         </div>
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-// const Product = () => {
-
-//     var products = [
-//         {
-//             pid:100,
-//             name:'Sony Led',
-//             price:400
-//         },
-//         {
-//             pid:101,
-//             name:'Samsung Led',
-//             price:300
-//         } 
-//     ]
-         
-    
-
-//     return (
-//         <div className="productDiv">
-           
-//                      {
-//                         products.map((product) => <p key={product.pid}>{product.pid} and the name is {product.name}</p>)
-//                      };
-           
-//         </div>
-//     )
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const Product = () => {
-
-//     var product = 
-//         {
-//             pid:100,
-//             name:'Sony Led',
-//             price:400
-//         }  
-    
-
-//     return (
-//         <div className="productDiv">
-//            <p>Produt Id is {product.pid}</p>
-//            <p>Produt Name is {product.name}</p>
-//            <p>Produt Price is {product.price}</p>             
-//         </div>
-//     )
-// }
 
 export default Product
