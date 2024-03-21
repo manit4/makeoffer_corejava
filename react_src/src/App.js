@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header'
-import Product from './components/Product';
 import AllProducts from './components/AllProducts';
 import { AddProduct } from './components/AddProduct';
 import { Container, Col, Row } from 'reactstrap';
@@ -9,6 +8,8 @@ import { Menu } from './components/Menu';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AboutUs } from './components/AboutUs';
 import { ContactUs } from './components/ContactUs';
+import { Home } from './components/Home';
+
 
 function App() {
 
@@ -21,10 +22,14 @@ function App() {
           <Col md={4}><Menu /></Col>
           <Col md={8}>
             <Routes>
-            <Route path='/' Component={AllProducts} />
+            <Route path='/' Component={Home} />
+            <Route path='/all-products' Component={AllProducts} />
             <Route path='/add-product' Component={AddProduct} />
             <Route path='/about-us' Component={AboutUs} />
             <Route path='/contact-us' Component={ContactUs} />
+            
+            
+            
             </Routes>
           </Col>
         </Row>

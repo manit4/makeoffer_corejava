@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import { ToastContainer, toast } from 'react-toastify' 
+import { addproduct, deleteProduct } from "../service/product-service";
 
 export const AddProduct = () => {
 
@@ -13,9 +14,8 @@ export const AddProduct = () => {
 
     function add(event) {
         event.preventDefault();
-
-        console.log('the product is ', product);
-        axios.post('http://localhost:9898/addProduct', product).then(
+        //adding product on server
+        addproduct(product).then(
         (response)=> {
             console.log('response is ', response.data);
             toast.success('Product Added Successfully', {
