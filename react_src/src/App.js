@@ -9,9 +9,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AboutUs } from './components/AboutUs';
 import { ContactUs } from './components/ContactUs';
 import { Home } from './components/Home';
-
+import { Dashboard } from './components/Dashboard';
+import { Private } from './components/Private';
 
 function App() {
+
 
   return (
     <div>
@@ -27,6 +29,12 @@ function App() {
             <Route path='/add-product' Component={AddProduct} />
             <Route path='/about-us' Component={AboutUs} />
             <Route path='/contact-us' Component={ContactUs} />
+            
+            <Route path='/private' Component={Private} >
+              <Route path='db' Component={Dashboard} />
+            </Route>
+            
+
             
             
             

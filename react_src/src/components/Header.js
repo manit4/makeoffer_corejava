@@ -1,16 +1,16 @@
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button } from 'reactstrap'
 import '../style/first.css'
-import {ToastContainer, toast} from 'react-toastify'
-
 
 function Header() {
 
         return (
             <div className='headerDiv'>
                 
+                
                 <h1>Ecommerce Application</h1>
+                
             </div>
         )
     }

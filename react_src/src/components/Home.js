@@ -4,25 +4,26 @@ import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import AllProducts from "./AllProducts";
-import { generateToken, addproduct } from '../service/product-service'
+import { addproduct } from '../service/product-service'
+import { dologin, generateToken, isLoggedIn } from "../service/user-service";
 
 export const Home = () => {
 
     const [loginForm, setLoginForm] = useState({})
-
-    useEffect(() => {
-        console.log('hi....', loginForm)
-    })
-
     const navigate = useNavigate();
 
-    function login(e) {
+    function submitLoginForm(e) {
     console.log(loginForm);
     e.preventDefault();
+    if(loginForm.username == null || loginForm.password == null) {
+        toast.warn('Enter Credentials first')
+        return;
+    }
     generateToken(loginForm).then(
         (response) => {
-            console.log('token is ', response)
+            console.log('token is ', response.data)
             if(response.data != null && response.data != '') {
+                dologin(response.data.token)
                 navigate('/all-products')
             }
         }
@@ -38,7 +39,7 @@ export const Home = () => {
         <div >
             <ToastContainer />
             <h2 style={{textAlign:'center'}}>Enter Credentials</h2>
-            <Form onSubmit={login}>
+            <Form onSubmit={submitLoginForm}>
                 <Label for="username">Username</Label>
                 <FormGroup>
                     <Input type="text" name="username" placeholder="Enter Username" onChange={(event)=> {
