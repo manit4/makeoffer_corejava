@@ -1,0 +1,15 @@
+.headerDiv {
+    color: Red;
+    font-style: normal;
+    text-align: center;
+    background: yellow;
+}
+
+.productDiv {
+
+    text-align: center;
+}
+
+#underline {
+    text-decoration: none;
+}
