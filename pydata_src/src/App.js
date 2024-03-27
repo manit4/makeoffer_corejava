@@ -7,12 +7,13 @@ import Home from './components/Home';
 import { Container, Col, Row } from 'reactstrap';
 import Master from './components/Master';
 import Reporting from './components/Reporting';
-import Userr from './components/Userr';
+import Candidate from './components/Candidate';
 import Employee from './components/Employee';
 import Rolee from './components/Rolee';
 import TimeSheet from './components/TimeSheet';
 import Footer from './components/Footer';
-import Navbarr from './components/Navbarr';
+import { CandidateForm } from './components/CandidateForm';
+
 
 function App() {
   return (
@@ -23,8 +24,8 @@ function App() {
       <Routes>
         <Route path='/' Component={Home} />
         <Route path='/reporting' Component={Reporting} />
-        <Route path='/master' Component={Master} exact> 
-          <Route path="user" Component={Userr} exact />
+        <Route path='master/*' element={<Master/>} exact> 
+          <Route path="candidate" element={<Candidate />} exact />
           <Route path="employee" Component={Employee} exact />
           <Route path="role" Component={Rolee} exact />
         </Route>
@@ -32,7 +33,6 @@ function App() {
         
       </Routes>
       <Footer />
-      <Navbarr />
       </BrowserRouter>
     </div>
   );

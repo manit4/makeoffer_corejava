@@ -9,7 +9,7 @@ export default function Header() {
         return (
             <Container>
             
-                <h1 style={{color:"red", marginLeft:400}}>Ecommerce Application</h1>
+                <h1 style={{color:"red", marginLeft:300, padding:20}}>PY Data ERP Tracker</h1>
             <div className='headerDiv'>
             
 <ListGroup>
