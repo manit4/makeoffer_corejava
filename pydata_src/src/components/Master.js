@@ -14,7 +14,7 @@ export default function Master() {
 
         <div>
         
-            <Container>
+            <Container style={{marginTop:30, marginBottom:30}}>
         <Row>
           <Col md={4}><Menu /></Col>
           <Col md={8}>

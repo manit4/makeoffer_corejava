@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import DisplayUser from "./DisplayUser";
 import { Button, Table } from "reactstrap";
 import { CandidateForm } from "./CandidateForm";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ListGroup } from "reactstrap";
+import Pagination from "./utils/Pagination";
+import Records from "./utils/Records";
 
 export function createCandidateForm() {
 
@@ -12,6 +14,14 @@ export function createCandidateForm() {
 }
 
 export default function Userr() {
+
+    const [data, setData] = useState([])
+    const [loading, setLoading] = useState(true);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [recordsPerPage] = useState(5);
+
+    const navigate = useNavigate();
 
     let users = [
         {
@@ -112,17 +122,32 @@ export default function Userr() {
         }
     ]
 
+    function newCandidate() {
+        console.log('inside new User');
+        navigate("newCandidate")
+    }
+
+
+    const indexOfLastRecord = currentPage * recordsPerPage;
+    const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+    const currentRecords = users.slice(indexOfFirstRecord, indexOfLastRecord);
+    const nPages = Math.ceil(users.length / recordsPerPage)
+
+    console.log(indexOfFirstRecord, indexOfLastRecord, currentRecords, nPages);
+
     return (
 
         
         <div>
 
-            <ListGroup>
-                <Link tag="a" to="newCandidate" className="list-group-item">Create New Candidate</Link>
+            {/* <ListGroup>
+                <Link tag="a" to="newCandidate" style={{marginLeft:500}}>Create New Candidate</Link>
                 
-            </ListGroup>
+            </ListGroup> */}
 
-<Table striped>
+            <Button color="primary" onClick={newCandidate} style={{marginLeft:500}}>New Candidate</Button>
+
+{/* <Table striped>
     <thead>
       <tr>
         <th>
@@ -148,7 +173,15 @@ export default function Userr() {
 
 </tbody>
     
-    </Table>
+    </Table> */}
+
+<h2> Simple Pagination Example in React </h2>
+            <Records data={currentRecords}/>
+            <Pagination
+                nPages={nPages}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+            />
             
         </div>
     )
