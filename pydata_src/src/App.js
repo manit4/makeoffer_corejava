@@ -12,7 +12,6 @@ import Employee from './components/Employee';
 import Rolee from './components/Rolee';
 import TimeSheet from './components/TimeSheet';
 import Footer from './components/Footer';
-import { CandidateForm } from './components/CandidateForm';
 
 
 function App() {

@@ -5,7 +5,7 @@ import { Container } from "reactstrap";
 export default function Footer() {
 
     return (
-        <Container style={{marginLeft:65}}>
+        <Container style={{position:"absolute", bottom:0, marginLeft:65}}>
            <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
       
 

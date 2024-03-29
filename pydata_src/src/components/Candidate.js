@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DisplayUser from "./DisplayUser";
 import { Button, Table } from "reactstrap";
-import { CandidateForm } from "./CandidateForm";
+import { CandidateForm } from "./Forms/CandidateForm";
 import { Link, useNavigate } from "react-router-dom";
 import { ListGroup } from "reactstrap";
 import Pagination from "./utils/Pagination";
@@ -175,7 +175,7 @@ export default function Userr() {
     
     </Table> */}
 
-<h2> Simple Pagination Example in React </h2>
+<h2> Candidates Present Below </h2>
             <Records data={currentRecords}/>
             <Pagination
                 nPages={nPages}
