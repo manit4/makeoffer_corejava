@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import { create } from "../../services/RoleService";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 
 export default function() {
     
    //const [ role, setRole ] = useState({})
     let role = {};
+
+    const navigate = useNavigate();
 
 function add(event) {
 
@@ -16,12 +19,19 @@ function add(event) {
 
     create(role).then(
         (response) => {
-            toast.success("response.data")
+            toast.success(response.data, {
+                position:"top-center"
+            })
             console.log('response is ',response)
+            //navigate("/master/role")
             
         },
         (error) => {
+            toast.error(error.response.data, {
+                position:"top-center"
+            })
             console.log('error is', error)
+            
         }
     ).catch((response) => {
         console.log('in ctach is ',response)
