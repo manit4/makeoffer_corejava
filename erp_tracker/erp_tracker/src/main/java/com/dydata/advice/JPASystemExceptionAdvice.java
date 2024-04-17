@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -71,5 +72,17 @@ public class JPASystemExceptionAdvice {
 		return errorMap;
 	
 	}
+	
+	@ExceptionHandler(HttpMessageNotReadableException.class)
+	public ResponseEntity<String> mappingEntityWithDataException(HttpMessageNotReadableException ex) {
+		
+		logger.error("Exception has occured "+ex.getMessage());
+		
+		ResponseEntity<String> responseEntity = new ResponseEntity<>("Bad Request Sent, Send Data in Right Manner", HttpStatus.BAD_REQUEST);
+		
+		return responseEntity;
+	}
+	
+	
 
 }
