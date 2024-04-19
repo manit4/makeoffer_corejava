@@ -4,75 +4,75 @@ import java.util.TreeSet;
 
 //Set is another category under Collection interface, set and its implementation classes maintain uniqueness...
 
-class A implements Comparable<A> {
-
-	int i = 4, j = 5;
-
-	@Override
-	public int compareTo(A o) {
-
-		int status = 0;
-
-		if (this.i < o.i) {
-			status = -1;
-		} else if (this.i > o.i) {
-			status = 1;
-		}
-		return status;
-	}
-
-}
-
-class SortingJ implements Comparator<A> {
-
-	@Override
-	public int compare(A o1, A o2) {
-
-		int status = 0;
-
-		if (o1.j < o2.j) {
-			status = -1;
-		} else if (o1.j > o2.j) {
-			status = 1;
-		}
-		return status;
-	}
-}
-
-public class Collection_22 {
-
-	public static void main(String[] args) {
-
-//		Set<A> set = new TreeSet<A>();
+//class A implements Comparable<AB> {
+//
+//	int i = 4, j = 5;
+//
+//	@Override
+//	public int compareTo(AB o) {
+//
+//		int status = 0;
+//
+//		if (this.i < o.i) {
+//			status = -1;
+//		} else if (this.i > o.i) {
+//			status = 1;
+//		}
+//		return status;
+//	}
+//
+//}
+//
+//class SortingJ implements Comparator<AB> {
+//
+//	@Override
+//	public int compare(AB o1, AB o2) {
+//
+//		int status = 0;
+//
+//		if (o1.j < o2.j) {
+//			status = -1;
+//		} else if (o1.j > o2.j) {
+//			status = 1;
+//		}
+//		return status;
+//	}
+//}
+//
+//public class Collection_22 {
+//
+//	public static void main(String[] args) {
+//
+////		Set<A> set = new TreeSet<A>();
+////		
+////		A a1 = new A();   A a2 = new A();   A a3 = new A();
+////		a2.i = 1;   a3.i = 2;
+////		
+////		set.add(a1);   set.add(a2);    set.add(a3);
+////		
+////		set.forEach(data->System.out.println("value of is is "+data.i+", value of j is "+data.j));	
+//
 //		
-//		A a1 = new A();   A a2 = new A();   A a3 = new A();
-//		a2.i = 1;   a3.i = 2;
 //		
-//		set.add(a1);   set.add(a2);    set.add(a3);
 //		
-//		set.forEach(data->System.out.println("value of is is "+data.i+", value of j is "+data.j));	
-
-		
-		
-		
-		
-		
-		Set<A> set = new TreeSet<A>(new SortingJ());
-
-		A a1 = new A();
-		A a2 = new A();
-		A a3 = new A();
-		a2.i = 1;   a2.j = -10;
-		a3.i = 2;   a3.j = 1;
-
-		set.add(a1);
-		set.add(a2);
-		set.add(a3);
-
-		set.forEach(data -> System.out.println("value of is is " + data.i + ", value of j is " + data.j));
-
-	}
-}
+//		
+//		
+//		Set<AB> set = new TreeSet<AB>(new SortingJ());
+//
+//		AB a1 = new AB();
+//		AB a2 = new AB();
+//		AB a3 = new AB();
+//		a2.i = 1;   a2.j = -10;
+//		a3.i = 2;   a3.j = 1;
+//
+//		set.add(a1);
+//		set.add(a2);
+//		set.add(a3);
+//
+//		set.forEach(data -> System.out.println("value of is is " + data.i + ", value of j is " + data.j));
+//
+//	}
+//}
 
 //class A implements Comparable<A>{
 //	
