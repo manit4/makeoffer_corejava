@@ -1,62 +1,62 @@
 
-class Employee {//In POJo class, all the variables are kept private and the methods(getters and setters) are public
-	
-	private int id;
-	private String name;
-	private double salary;
-	
-	public Employee() {
-		
-	}
-	public Employee(int id, String name, double salary) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.salary = salary;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-	public int getId() {
-		return id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public double getSalary() {
-		return salary;
-	}
-	public void setSalary(double salary) {
-		this.salary = salary;
-	}
-}
-
-public class ActualJava_16 {
-	
-	private static int value;
-	
-	public static void main(String[] args) {
-	
-		
-		Employee rushan = new Employee(100, "Rushan Shaikh", 10000);
-		Employee zane = new Employee(101, "Zane Yu", 15000);
-	
-		//zane.salary = 20000;//this is illegal since I am trying to set the private variable of Employee
-							//class from another class since private member access is in its own class...
-		//ActualJava_16.value = 100;
-	
-		zane.setId(102);   zane.setSalary(25000);    
-		System.out.println(zane.getId());
-		System.out.println(zane.getSalary());
-		
-		
-		
-	}
-}
+//class Employee {//In POJo class, all the variables are kept private and the methods(getters and setters) are public
+//	
+//	private int id;
+//	private String name;
+//	private double salary;
+//	
+//	public Employee() {
+//		
+//	}
+//	public Employee(int id, String name, double salary) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.salary = salary;
+//	}
+//	
+//	public void setId(int id) {
+//		this.id = id;
+//	}
+//	public int getId() {
+//		return id;
+//	}
+//	public String getName() {
+//		return name;
+//	}
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+//	public double getSalary() {
+//		return salary;
+//	}
+//	public void setSalary(double salary) {
+//		this.salary = salary;
+//	}
+//}
+//
+//public class ActualJava_16 {
+//	
+//	private static int value;
+//	
+//	public static void main(String[] args) {
+//	
+//		
+//		Employeee rushan = new Employeee(100, "Rushan Shaikh", 10000);
+//		Employeee zane = new Employeee(101, "Zane Yu", 15000);
+//	
+//		//zane.salary = 20000;//this is illegal since I am trying to set the private variable of Employee
+//							//class from another class since private member access is in its own class...
+//		//ActualJava_16.value = 100;
+//	
+//		zane.setId(102);   zane.setSalary(25000);    
+//		System.out.println(zane.getId());
+//		System.out.println(zane.getSalary());
+//		
+//		
+//		
+//	}
+//}
 
 
 //class Employee {//Employee class here is POJO(Plane Old Java Object)...

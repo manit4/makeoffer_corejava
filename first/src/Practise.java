@@ -1,49 +1,482 @@
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-
-
-class AB  {
-
-	int i = 4, j = 5, k = 6;
-
-	@Override
-	public String toString() {
-		return "AB [i=" + i + ", j=" + j + ", k=" + k + "]";
-	}
-
-}
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 
 public class Practise extends Object {
 
 	public static void main(String[] args) {
-
-		AB a1 = new AB();     a1.i = 1000;
-		AB a2 = new AB();     a2.j = 40;   
-		AB a3 = new AB();     a3.j = -100;     a3.i = 300;
-
-		Set<AB> set = new HashSet<>();
-		set.add(a1);
-		set.add(a2);
-		set.add(a3);
-
-		for (AB val : set) {
-
-			System.out.println(val);
-		}
-
-		set.forEach(val -> System.out.println(val));
 		
-		Iterator it = set.iterator();
 		
-		while(it.hasNext()) {
+		
+		Supplier<Integer> supplier = () -> {
 			
-			System.out.println(it.next());
-		}
+			String name = "Kiran";
+			return name.length();
+		};
 		
+		int length = supplier.get();
+		
+		System.out.println("The length is "+length);
 	}
 }
+
+
+
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//		
+//		Consumer<String> consumer = val -> {
+//			
+//			System.out.println("The first satement is "+val);
+//			System.out.println("The second statement is "+val);
+//			
+//			System.out.println("The name is "+val);
+//			System.out.println("the size is "+val.length());
+//		};
+//		
+//		consumer.accept("Rongjing");
+//	}
+//}
+
+
+
+//class Employeee {
+//
+//String name;
+//int salary;
+//}
+//
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//		
+//		Employeee employee = new Employeee(); 
+//		employee.name = "Rongjing";   employee.salary = 7000;
+//		
+//		Function<Employeee, String> function = obj -> {
+//			
+//			String status = null;
+//			
+//			if(obj.salary >4000) {
+//				
+//				status = obj.name+" is eligible for the bonus amount";
+//			}
+//			else {
+//				status = obj.name+" is not eligibel for the bonus amount";
+//			}
+//			
+//			return status;
+//		};
+//		
+//		String returned = function.apply(employee);
+//		System.out.println(returned);
+//	}
+//}
+
+
+
+
+//class Employeee {
+//	
+//	String name;
+//	int salary;
+//}
+//
+//
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//		
+//		Employeee employee = new Employeee(); 
+//		employee.name = "Rongjing";   employee.salary = 3000;
+//		
+//		Predicate<Employeee> predicate = obj -> {
+//			
+//			boolean status = false;
+//			
+//			if(obj.salary > 4000) {
+//				
+//				status = true;
+//			}
+//			return status;
+//		};
+//		
+//		boolean status = predicate.test(employee);
+//		
+//		System.out.println(status);
+//		
+//		
+//		
+//
+//	}
+//}
+
+
+
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//		
+//		
+//		Predicate<Integer> predicate = val -> {
+//			if(val >10) {
+//				return true;
+//			}
+//			else {
+//				return false;
+//			}
+//		};
+//		
+//		boolean status = predicate.test(2);
+//		System.out.println(status);
+//		
+//
+//	}
+//}
+
+
+
+
+//interface A {
+//	
+//	public void iterateArray(int[] array);
+//}
+//
+////class B implements A {
+////
+////	@Override
+////	public void iterateArray(int[] array) {
+////		
+////		for(int val : array) {
+////			
+////			if(val > 5000) {
+////				
+////				System.out.println("You are eligible for the bonus and the amount is "+val);
+////			}
+////		}	
+////	}
+////}
+//
+//
+//
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//		
+//		int salaries[] = {2000, 7000, 3500, 9000};
+//		
+//		A a = arr -> {
+//			
+//			for(int val : arr) {
+//				
+//				if(val > 5000) {
+//					
+//					System.out.println("You are eligible for the bonus and the amount is "+val);
+//				}
+//			}
+//		};
+//		
+//		a.iterateArray(salaries);
+//
+//	}
+//}
+
+
+//interface Cab {
+//	
+//	public int book(String source, String destination);
+//}
+//
+////class Uber implements Cab {
+////
+////	@Override
+////	public int book(String src, String dest)  {
+////		
+////		System.out.println("Your cab has been booked from "+src+" to "+dest);
+////		
+////		return 100;
+////	}	
+////}
+//
+//
+//
+//
+//
+//
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//
+//	Cab uber = (src, dest) -> {
+//		
+//		System.out.println("Your cab has been booked from "+src+" to "+dest);
+//		
+//		return 100;
+//	};
+//			
+//	int fare = uber.book("Delhi", "Mumbai");
+//	System.out.println("The fare is "+fare);
+//	}
+//}
+
+
+
+
+//interface Cab {
+//	
+//	public void book(String source, String destination);
+//}
+//
+////class Uber implements Cab {
+////
+////	@Override
+////	public void book(String src, String dest)  {
+////		
+////		System.out.println("Your cab has been booked from "+src+" to "+dest);
+////	}	
+////}
+//
+//
+//
+//
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//
+//	Cab uber = (src, dest) -> System.out.println("Your cab has been booked from "+src+" to "+dest);
+//			
+//	uber.book("Delhi", "Mumbai");
+//	}
+//}
+
+
+//interface Cab {
+//	
+//	public void book();
+//}
+//
+////class Uber implements Cab {
+////
+////	@Override
+////	public void book()  {
+////		
+////		System.out.println("Your cab has been booked...");
+////	}	
+////}
+//
+//
+//
+//
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//
+//	Cab uber = () -> System.out.println("Your cab has been booked...");
+//	
+//	uber.book();
+//	}
+//}
+
+
+
+//@FunctionalInterface
+//interface A {
+//	
+//	void add();
+//	
+//	static void divide() {
+//		System.out.println("inside divide...");
+//	}
+//	default void multiply() {
+//		System.out.println("insdie multiply...");
+//	}
+//	
+//}
+//
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//
+//		
+//	}
+//}
+
+
+//@FunctionalInterface
+//interface A {
+//	
+//	void add();
+//	void sub();
+//	static void divide() {
+//		System.out.println("inside divide...");
+//	}
+//	default void multiply() {
+//		System.out.println("insdie multiply...");
+//	}
+//	
+//}
+//
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//
+//		
+//	}
+//}
+
+
+//interface A {
+//	
+//	void add();
+//	void sub();
+//	static void divide() {
+//		System.out.println("inside divide...");
+//	}
+//	default void multiply() {
+//		System.out.println("insdie multiply...");
+//	}
+//	
+//}
+//
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//
+//		
+//	}
+//}
+
+
+
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//
+//		Map<Integer, String> map = new TreeMap<>();
+//		
+//		map.put(100, "Rongjing");
+//		map.put(101, "Kiran");
+//		map.put(102, "Jaingwei");
+//		map.put(99, "Manit");
+//		
+//		map.put(103, "Manit");
+//		map.put(103, "Manu");
+//		
+//		
+//		map.put(104, null);
+//		map.put(105, null);
+//		
+//
+//		
+//		for(Map.Entry<Integer, String> entry : map.entrySet()) {
+//			
+//			System.out.println(entry.getKey()+", "+entry.getValue());
+//		}
+//		
+//		
+//		
+//	}
+//}
+
+
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//
+//		Map<Integer, String> map = new TreeMap<>();
+//		
+//		map.put(100, "Rongjing");
+//		map.put(101, "Kiran");
+//		map.put(102, "Jaingwei");
+//		map.put(99, "Manit");
+//		
+//		map.put(103, "Manit");
+//		map.put(103, "Manu");
+//		
+////		map.put(null, "Bala");
+////		map.put(null, "Subramanyam");
+//		
+//		map.put(104, null);
+//		map.put(105, null);
+//		
+////		System.out.println(map.get(101));
+////		
+////		System.out.println(map.containsKey(100));
+//		
+//////		Set<Integer> set = map.keySet();
+////		
+//////		Iterator<Integer> it = set.iterator();
+//////		
+//////		while(it.hasNext()) {
+//////			System.out.println(map.get(it.next()));
+//////		}
+//		
+//		
+//		
+////		Set<Integer> set = map.keySet();
+////		
+////		for(Integer val : set) {
+////			System.out.println(map.get(val));
+////		}
+//		
+//		
+//		//Set<Map.Entry<Integer, String>> entrySet =  map.entrySet();
+//		
+//		for(Map.Entry<Integer, String> entry : map.entrySet()) {
+//			
+//			System.out.println(entry.getKey()+", "+entry.getValue());
+//		}
+//		
+//		
+//		
+//	}
+//}
+
+
+//class AB  {
+//
+//	int i = 4, j = 5, k = 6;
+//
+//	@Override
+//	public String toString() {
+//		return "AB [i=" + i + ", j=" + j + ", k=" + k + "]";
+//	}
+//
+//}
+//
+//
+//public class Practise extends Object {
+//
+//	public static void main(String[] args) {
+//
+//		AB a1 = new AB();     a1.i = 1000;
+//		AB a2 = new AB();     a2.j = 40;   
+//		AB a3 = new AB();     a3.j = -100;     a3.i = 300;
+//
+//		Set<AB> set = new HashSet<>();
+//		set.add(a1);
+//		set.add(a2);
+//		set.add(a3);
+//
+//		for (AB val : set) {
+//
+//			System.out.println(val);
+//		}
+//
+//		set.forEach(val -> System.out.println(val));
+//		
+//		Iterator it = set.iterator();
+//		
+//		while(it.hasNext()) {
+//			
+//			System.out.println(it.next());
+//		}
+//		
+//	}
+//}
 
 
 
