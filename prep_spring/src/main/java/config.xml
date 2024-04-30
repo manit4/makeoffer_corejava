@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+
+	<bean name="restaurant" class="Restaurant" scope="prototype">
+	</bean>
+
+	
+
+	<!-- <bean name="restaurant" class="Restaurant" autowire="constructor">
+	</bean>
+
+	<bean name="tea" class="Tea"></bean> -->
+
+	<!-- <bean name="restaurant" class="Restaurant" autowire="byName">
+	</bean>
+
+	<bean name="tea" class="Tea"></bean>
+	<bean name="randomTea2" class="Tea"></bean> -->
+
+
+	<!-- <bean name="restaurant" class="Restaurant" autowire="byName"> </bean> 
+		<bean name="tea" class="Tea"></bean> -->
+
+
+
+
+	<!-- <bean name="restaurant" class="Restaurant"> <property name="tea" ref="tea"></property> 
+		</bean> <bean name="tea" class="Tea"></bean> -->
+
+
+	<!-- <bean name="restaurant" class="Restaurant"> <constructor-arg value="PQR 
+		Chains"></constructor-arg> </bean> -->
+
+
+	<!-- <bean name="restaurant" class="Restaurant"> <property name="restaurantName" 
+		value="XYZ Chains"></property> </bean> -->
+
+</beans>
